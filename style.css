@@ -1,0 +1,321 @@
+/* ==========================================
+   Omar Apps - ملف التنسيق
+   اللون الأساسي: أزرق غامق
+   ========================================== */
+
+/* --- الأساسيات --- */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI', Tahoma, Arial, sans-serif;
+  background:linear-gradient(180deg, #0A1628 0%, #0B1E3A 50%, #071224 100%);
+  background-attachment:fixed;
+  color:#EAF2FF;
+  text-align:center;
+  min-height:100vh;
+  line-height:1.6;
+}
+
+a{color:#7EC8FF}
+
+/* --- رأس الصفحة --- */
+.header{
+  padding:40px 16px 20px;
+}
+
+.site-title{
+  cursor:pointer;
+  font-size:32px;
+  margin:0 0 10px;
+  line-height:1.4;
+  /* العنوان هو زر سري، بس شكله عادي */
+  user-select:none;
+}
+
+.site-title:hover{
+  opacity:.9;
+}
+
+.header p{
+  opacity:.85;
+  margin:8px 0 15px;
+}
+
+/* --- الأزرار --- */
+.btn,
+button{
+  background:#1E90FF;
+  color:#fff;
+  border:0;
+  padding:11px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  margin:4px;
+  font-size:15px;
+  font-family:inherit;
+  transition:.2s;
+}
+
+.btn:hover,
+button:hover{
+  background:#1873CC;
+  transform:translateY(-1px);
+}
+
+button:disabled{
+  background:#555;
+  cursor:not-allowed;
+  transform:none;
+  opacity:.7;
+}
+
+/* --- حقول الإدخال --- */
+input,
+textarea,
+select{
+  width:100%;
+  padding:11px 12px;
+  margin:6px 0;
+  border-radius:10px;
+  border:1px solid #335;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-family:inherit;
+  font-size:15px;
+  outline:none;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#1E90FF;
+  background:rgba(255,255,255,.12);
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:rgba(255,255,255,.5);
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+/* بحث */
+#searchInput{
+  max-width:450px;
+  margin:15px auto 0;
+  display:block;
+  background:rgba(255,255,255,.1);
+  border-radius:25px;
+  padding:12px 20px;
+}
+
+/* --- شبكة التطبيقات --- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  gap:16px;
+  padding:20px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:16px;
+  padding:18px;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(30,144,255,.5);
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.card img{
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  border-radius:20px;
+  background:#0B1E3A;
+}
+
+.card h3{
+  margin:12px 0 5px;
+  font-size:20px;
+}
+
+.card p{
+  margin:8px 0;
+  font-size:14px;
+  opacity:.9;
+}
+
+.card hr{
+  border:0;
+  border-top:1px solid rgba(255,255,255,.15);
+  margin:15px 0;
+}
+
+/* --- أقسام الشكاوى والاقتراحات والتواصل --- */
+.forms{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:16px;
+  padding:20px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.forms > div{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  padding:18px;
+  border-radius:16px;
+  text-align:right;
+}
+
+.forms h2{
+  margin-top:0;
+  text-align:center;
+  font-size:19px;
+}
+
+/* --- الفوتر --- */
+footer{
+  padding:25px 16px;
+  opacity:.9;
+  font-size:15px;
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:20px;
+}
+
+footer a{
+  text-decoration:none;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+/* --- النوافذ المنبثقة - كلمة المرور ولوحة التحكم --- */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99;
+  padding:15px;
+}
+
+.modal-box{
+  background:#0B1E3A;
+  border:1px solid rgba(255,255,255,.15);
+  padding:22px;
+  border-radius:16px;
+  width:90%;
+  max-width:480px;
+  max-height:90vh;
+  overflow-y:auto;
+  text-align:right;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.modal-box.large{
+  max-width:700px;
+}
+
+.modal-box h3{
+  text-align:center;
+  margin-top:0;
+  color:#7EC8FF;
+}
+
+.modal-box h4{
+  color:#7EC8FF;
+  margin-top:20px;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  padding-bottom:8px;
+}
+
+.modal-box label{
+  display:block;
+  text-align:right;
+  margin:10px 0 5px;
+  font-size:14px;
+}
+
+.modal-box hr{
+  border:0;
+  border-top:1px solid rgba(255,255,255,.15);
+  margin:20px 0;
+}
+
+.hidden{
+  display:none !important;
+}
+
+#passError{
+  color:#ff6b6b;
+  text-align:center;
+  font-weight:bold;
+}
+
+#apkInfo{
+  font-size:13px;
+  color:#7EC8FF;
+  background:rgba(30,144,255,.1);
+  padding:8px;
+  border-radius:8px;
+}
+
+#previewImage{
+  display:block;
+  margin:10px auto;
+  border:2px solid #1E90FF;
+}
+
+/* --- للموبايل --- */
+@media (max-width: 600px){
+  .site-title{
+    font-size:24px;
+  }
+  .grid{
+    grid-template-columns:1fr;
+    padding:12px;
+  }
+  .forms{
+    grid-template-columns:1fr;
+    padding:12px;
+  }
+  .modal-box{
+    padding:16px;
+    width:95%;
+  }
+  .header{
+    padding:25px 12px 10px;
+  }
+}
+
+/* --- شريط التمرير --- */
+::-webkit-scrollbar{
+  width:8px;
+}
+::-webkit-scrollbar-track{
+  background:#0A1628;
+}
+::-webkit-scrollbar-thumb{
+  background:#1E90FF;
+  border-radius:10px;
+}
