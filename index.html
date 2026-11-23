@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Omar Apps</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -43,7 +43,12 @@
   </section>
 </main>
 
-<footer>جميع الحقوق محفوظة لـ عمر®</footer>
+<footer>
+  جميع الحقوق محفوظة لـ عمر®
+  <br>
+  <a href="about.html" style="color:#7EC8FF">من نحن</a> |
+  <a href="privacy.html" style="color:#7EC8FF">سياسة الخصوصية</a>
+</footer>
 
 <!-- نافذة كلمة المرور -->
 <div id="passwordModal" class="modal hidden">
@@ -61,19 +66,22 @@
   <div class="modal-box large">
     <h3>🔒 لوحة تحكم المطور</h3>
 
-    <h4>➕ إضافة تطبيق جديد بضغطة زر</h4>
+    <h4>➕ إضافة تطبيق جديد - سحب وإفلات</h4>
     <input id="newAppName" placeholder="اسم التطبيق">
     <textarea id="newAppDesc" placeholder="وصف التطبيق"></textarea>
+
     <label>🖼️ صورة التطبيق: <input type="file" id="newAppImage" accept="image/*"></label>
     <img id="previewImage" style="width:90px;height:90px;border-radius:15px;display:none">
-<!-- منطقة سحب وإفلات ملف APK -->
-<div id="dropZone" style="border:2px dashed #1E90FF;border-radius:15px;padding:25px;text-align:center;cursor:pointer;background:rgba(30,144,255,.08);margin:10px 0">
-  <p style="font-size:30px;margin:0">📦</p>
-  <p><b>اسحب ملف APK هنا</b></p>
-  <p style="opacity:.7;font-size:13px">أو اضغط هنا لاختيار الملف من جهازك</p>
-  <p id="apkInfo" style="color:#7EC8FF"></p>
-</div>
-<input type="file" id="newAppApk" accept=".apk" style="display:none">
+
+    <!-- منطقة سحب وإفلات ملف APK -->
+    <div id="dropZone" style="border:2px dashed #1E90FF;border-radius:15px;padding:25px;text-align:center;cursor:pointer;background:rgba(30,144,255,.08);margin:10px 0">
+      <p style="font-size:30px;margin:0">📦</p>
+      <p><b>اسحب ملف APK هنا</b></p>
+      <p style="opacity:.7;font-size:13px">أو اضغط هنا لاختيار الملف من جهازك</p>
+      <p id="apkInfo" style="color:#7EC8FF"></p>
+    </div>
+    <input type="file" id="newAppApk" accept=".apk" style="display:none">
+
     <button onclick="addApp()">💾 حفظ التطبيق</button>
 
     <hr>
@@ -93,12 +101,8 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
-<footer>
-  جميع الحقوق محفوظة لـ عمر®
-  <br>
-  <a href="about.html" style="color:#7EC8FF">من نحن</a> |
-  <a href="privacy.html" style="color:#7EC8FF">سياسة الخصوصية</a>
-</footer>
+<!-- مهم: الملفات جنب بعض من غير مجلدات -->
+<script src="apps.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
