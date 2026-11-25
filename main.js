@@ -1,13 +1,13 @@
 // ==========================================
-// Omar Apps - main.js - نسخة مضمونة
-// كل الدوال هنا global عشان الأزرار تشتغل
+// Omar Apps - main.js - نسخة كاملة ومصلحة
 // ==========================================
 
 const ADMIN_PASSWORD = "OmPa1357924680";
 
-// لو ملف apps.js مش موجود، اعمل تطبيقات افتراضية عشان الموقع ميقفش
+// لو ملف apps.js مش موجود، اعمل تطبيقات افتراضية
+// مهم: بنستخدم window.APPS مش var APPS عشان ميحصلش تكرار
 if (typeof APPS === 'undefined') {
-  var APPS = [
+  window.APPS = [
     { id: 1, name: "تطبيق عمر 1", desc: "وصف التطبيق الأول", image: "", apk: "", apkName: "" }
   ];
 }
@@ -179,22 +179,13 @@ function addApp(){
 }
 
 // ============ ربط الأحداث بعد تحميل الصفحة ============
-// مهم: بنستنى الصفحة تحمل الأول عشان العناصر تكون موجودة
 document.addEventListener('DOMContentLoaded', function(){
-
-  // العنوان = زر لوحة التحكم
   let title = $('siteTitle');
-  if(title){
-    title.addEventListener('click', openPasswordModal);
-  }
+  if(title){ title.addEventListener('click', openPasswordModal); }
 
-  // البحث
   let search = $('searchInput');
-  if(search){
-    search.addEventListener('input', function(e){ renderApps(e.target.value); });
-  }
+  if(search){ search.addEventListener('input', function(e){ renderApps(e.target.value); }); }
 
-  // صورة التطبيق
   let imgInput = $('newAppImage');
   if(imgInput){
     imgInput.addEventListener('change', function(e){
@@ -210,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // سحب وإفلات APK
   let dropZone = $('dropZone');
   let apkInput = $('newAppApk');
   if(dropZone && apkInput){
@@ -229,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // Enter في كلمة المرور = دخول
   let passInput = $('adminPass');
   if(passInput){
     passInput.addEventListener('keypress', function(e){
@@ -240,5 +229,4 @@ document.addEventListener('DOMContentLoaded', function(){
   renderApps();
 });
 
-// لو الصفحة حملت قبل كده، شغّل العرض على طول
 renderApps();
